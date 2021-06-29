@@ -1,0 +1,29 @@
+{
+  "name": "stv-cli",
+  "version": "1.0.0",
+  "description": "stv-cli 脚手架1.0.0",
+  "bin": {
+    "stv-cli": "./bin/stvCli.js",
+    "stv-cli-init": "./bin/stvCli-init.js"
+  },
+  "main": "./bin/stvCli-hellow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "stevechow",
+  "license": "ISC",
+  "dependencies": {
+    "cfonts": "^2.4.5",
+    "commander": "^4.0.0",
+    "download-git-repo": "^3.0.2",
+    "glob": "^7.1.5",
+    "handlebars": "^4.5.1",
+    "inquirer": "^7.0.0",
+    "metalsmith": "^2.3.0",
+    "ora": "^4.0.2",
+    "single-line-log": "^1.1.2"
+  }
+}
