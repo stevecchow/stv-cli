@@ -121,7 +121,7 @@ function go() {
         maxLength: "0", // define how many character can be on one line
       });
       return download(projectFolder).then((target) => {
-        console.log("target >>> ", target);
+        // console.log("target >>> ", target);
         return {
           projectFolder,
           downloadTemp: target,
