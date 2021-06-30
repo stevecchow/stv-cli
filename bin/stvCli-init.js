@@ -152,17 +152,17 @@ function go() {
             message: "是否使用antd",
             default: "No",
           },
-          {
-            name: "useTslint",
-            message: "是否使用tslint",
-            default: "No",
-          },
+          // {
+          //   name: "useTslint",
+          //   message: "是否使用tslint",
+          //   default: "No",
+          // },
         ])
         .then((answers) => {
           let v = answers.useAntd.toUpperCase();
           answers.useAntd = v === "YES" || v === "Y";
-          let useTslint = answers.useTslint.toUpperCase();
-          answers.useTslint = useTslint === "YES" || useTslint === "Y";
+          // let useTslint = answers.useTslint.toUpperCase();
+          // answers.useTslint = useTslint === "YES" || useTslint === "Y";
           return {
             ...context,
             metadata: {
