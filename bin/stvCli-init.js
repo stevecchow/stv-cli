@@ -148,21 +148,21 @@ function go() {
             default: `A project named ${context.projectFolder}`,
           },
           {
-            name: "isElement",
-            message: "是否使用element",
+            name: "useAntd",
+            message: "是否使用antd",
             default: "No",
           },
           {
-            name: "isEslint",
-            message: "是否使用isEslint",
+            name: "useTslint",
+            message: "是否使用tslint",
             default: "No",
           },
         ])
         .then((answers) => {
-          let v = answers.isElement.toUpperCase();
-          answers.isElement = v === "YES" || v === "Y";
-          let iseslint = answers.isEslint.toUpperCase();
-          answers.isEslint = iseslint === "YES" || iseslint === "Y";
+          let v = answers.useAntd.toUpperCase();
+          answers.useAntd = v === "YES" || v === "Y";
+          let useTslint = answers.useTslint.toUpperCase();
+          answers.useTslint = useTslint === "YES" || useTslint === "Y";
           return {
             ...context,
             metadata: {
