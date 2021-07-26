@@ -2,4 +2,7 @@
 
 ### how to use ?
 
-`node ./bin/stvCli-init your-project-name`
+`sudo npm i stv-cli -g`<br>
+`stv-create <your-project-name>`
+
+😄 start enjoy hacking!
