@@ -1,9 +1,8 @@
 {
   "name": "stv-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "stv-cli 脚手架1.0.0",
   "bin": {
-    "stv-cli": "./bin/stvCli.js",
     "stv-create": "./bin/stvCli-init.js"
   },
   "main": "./bin/stvCli-hellow.js",
