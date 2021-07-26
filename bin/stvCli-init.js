@@ -11,7 +11,7 @@ const chalk = require("chalk");
 const remove = require("../lib/remove"); // 删除文件js
 const generator = require("../lib/generator"); // 模版插入
 const CFonts = require("cfonts");
-console.log(program);
+// console.log(program);
 // console.log(process.argv);
 program.usage("<project-name>").parse(process.argv); // 加入这个能获取到项目名称
 // program.help();
