@@ -16,7 +16,8 @@ program.usage("<project-name>").parse(process.argv); // 加入这个能获取到
 
 // 根据输入，获取项目名称
 let projectName = program.rawArgs[2];
-// console.log(program);
+console.log(program);
+// console.log(process.argv);
 // console.log("projectName >>> ", projectName);
 // 初始化下一步
 let next = undefined;
@@ -69,13 +70,11 @@ async function goProcess() {
           }
         });
     } else {
-      // console.log(2);
       // 当前目录为空
       rootName = projectName;
       next = await Promise.resolve(projectName);
     }
   } else if (rootName === projectName) {
-    // console.log(3);
     // 如果文件名和根目录文件名一致
     rootName = ".";
     next = await inquirer
