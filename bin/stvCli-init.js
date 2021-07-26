@@ -16,11 +16,10 @@ program
   .version("v" + require("../package.json").version)
   .description(require("../package.json").description)
   .usage("<command> [项目名称]")
+  .option("-i", "An integer argument")
   .command("init", "创建新项目")
   // 加入这个能获取到项目名称
   .parse(process.argv);
-
-console.log('program >>>',program);
 
 // 根据输入，获取项目名称
 let projectName = program.rawArgs[2];
