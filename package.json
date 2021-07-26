@@ -1,6 +1,6 @@
 {
   "name": "stv-cli",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "stv-cli 前端项目脚手架",
   "bin": {
     "stv-create": "./bin/stvCli-init.js"

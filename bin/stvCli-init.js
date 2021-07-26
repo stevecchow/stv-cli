@@ -11,17 +11,21 @@ const chalk = require("chalk");
 const remove = require("../lib/remove"); // 删除文件js
 const generator = require("../lib/generator"); // 模版插入
 const CFonts = require("cfonts");
-// console.log(program);
-// console.log(process.argv);
-program.usage("<project-name>").parse(process.argv); // 加入这个能获取到项目名称
-// program.help();
+
+program
+  .version("v" + require("../package.json").version)
+  .description(require("../package.json").description)
+  .usage("<command> [项目名称]")
+  .command("init", "创建新项目")
+  // 加入这个能获取到项目名称
+  .parse(process.argv);
+
+console.log('program >>>',program);
 
 // 根据输入，获取项目名称
 let projectName = program.rawArgs[2];
-// console.log(program.usage("<project-name>").parse(process.argv));
-// console.log(process.argv);
-// console.log("projectName >>> ", projectName);
-// 初始化下一步
+
+// 初始化下一步(命令行互动工具 inquirer)
 let next = undefined;
 
 if (!projectName) {
