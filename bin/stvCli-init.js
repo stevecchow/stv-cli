@@ -12,24 +12,25 @@ const remove = require("../lib/remove"); // 删除文件js
 const generator = require("../lib/generator"); // 模版插入
 const CFonts = require("cfonts");
 
+// 配置命令行工具的信息
 program
   .version("v" + require("../package.json").version)
   .description(require("../package.json").description)
-  .usage("<command> [项目名称]")
+  .name("stv-create")
+  .usage("<command> [options]")
   .option("-i", "An integer argument")
-  .command("init", "创建新项目")
+  .command("<your-project-name>", "create new project")
   // 加入这个能获取到项目名称
   .parse(process.argv);
 
 // 根据输入，获取项目名称
 let projectName = program.rawArgs[2];
 
-// 初始化下一步(命令行互动工具 inquirer)
+// 初始化命令行互动工具 inquirer
 let next = undefined;
 
 if (!projectName) {
-  // 如果没有输入名称则执行 helphelp
-  // 相当于执行命令的 --help 选项，显示 help 信息，这是 commander 内置的一个命令选项
+  // 如果没有输入名称则执行 help
   program.help();
   return;
 }
@@ -42,6 +43,7 @@ if (!projectName) {
 async function goProcess() {
   // 遍历当前目录，得到 ["bin", "lib", "lyz", "node_modules", "package-lock.json", "package.json"];
   const list = glob.sync("*");
+
   // process.cwd() 是当前执行 node 命令时候的文件夹地址，__dirname 是被执行的 js 文件的地址
   let rootName = path.basename(process.cwd());
   if (list.length) {
@@ -53,7 +55,6 @@ async function goProcess() {
         return projectName === n && isDir; // 找到创建文件名和当前目录文件存在一致的文件
       })
     ) {
-      // console.log(1);
       // 如果文件夹已经存在
       next = await inquirer
         .prompt([
@@ -107,7 +108,6 @@ function go() {
   // 预留，处理子命令
   next
     .then((projectFolder) => {
-      // console.log("projectFolder >>> ", projectFolder);
       if (projectFolder !== ".") {
         fs.mkdirSync(projectFolder);
       } else {
